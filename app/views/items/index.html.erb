@@ -1,0 +1,40 @@
+<h1>Listing items</h1>
+
+<!-- Implement code here
+Step 1. Make a div that maps to your controller
+Step 2. Within the div make a button that maps to the getItems() function in items.js
+Step 3. Write a <ul> with one <li> in it that uses the ngRepeat directive and prints out the 'detail'
+        property for each item -->
+
+
+
+
+
+<!-- Angular code above -->
+<table>
+  <thead>
+    <tr>
+      <th>Detail</th>
+      <th>Done</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @items.each do |item| %>
+      <tr>
+        <td><%= item.detail %></td>
+        <td><%= item.done %></td>
+        <td><%= link_to 'Show', item %></td>
+        <td><%= link_to 'Edit', edit_item_path(item) %></td>
+        <td><%= link_to 'Destroy', item, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Item', new_item_path %>

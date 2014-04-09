@@ -1,0 +1,20 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Detail:</strong>
+  <%= @item.detail %>
+</p>
+
+<ul>
+  <% @item.steps.each do |step| %>
+    <li><%= step.name %></li>
+  <% end %>
+</ul>
+
+<p>
+  <strong>Done:</strong>
+  <%= @item.done %>
+</p>
+
+<%= link_to 'Edit', edit_item_path(@item) %> |
+<%= link_to 'Back', items_path %>
